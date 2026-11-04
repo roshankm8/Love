@@ -189,9 +189,9 @@
     .bubble-1 { width: 170px; height: 170px; top: 12%; left: 10%; animation: driftOne 24s ease-in-out infinite alternate; }
     .bubble-2 { width: 210px; height: 210px; top: 62%; left: 8%; animation: driftTwo 28s ease-in-out infinite alternate; }
     .bubble-3 { width: 190px; height: 190px; top: 15%; right: 12%; animation: driftThree 26s ease-in-out infinite alternate; }
-    .bubble-4 { width: 220px; height: 220px; bottom: 12%; right: 9%; animation: driftOne 30s ease-in-out infinite alternate-reverse; }
-    .bubble-5 { width: 150px; height: 150px; top: 5%; left: 45%; animation: driftTwo 22s ease-in-out infinite alternate; }
-    .bubble-6 { width: 160px; height: 160px; bottom: 8%; left: 42%; animation: driftThree 25s ease-in-out infinite alternate-reverse; }
+    .bubble-4 { width: 220px; height: 220px; bottom: 7%; right: 9%; animation: driftOne 30s ease-in-out infinite alternate-reverse; }
+    .bubble-5 { width: 150px; height: 150px; top: 35%; left: 15%; animation: driftTwo 22s ease-in-out infinite alternate; }
+    .bubble-6 { width: 160px; height: 160px; bottom: 35%; left: 68%; animation: driftThree 25s ease-in-out infinite alternate-reverse; }
 
     @keyframes driftOne {
       0% { transform: translate(0, 0) rotate(0deg); }
@@ -234,7 +234,8 @@
                   inset 0 0 20px rgba(255, 255, 255, 0.35);
       border-radius: 32px;
       padding: 3rem 2.5rem;
-      max-width: 600px;
+      max-width:600px;
+    
       width: 100%;
       text-align: center;
       transition: all 0.5s ease;
@@ -295,7 +296,7 @@
        -------------------------------------------------------------------------- */
     .photo-frame {
       width: 280px;
-      height: 280px;
+      height: 380px;
       border-radius: 24px;
       overflow: hidden;
       border: 2px solid rgba(255, 255, 255, 0.6);
@@ -529,18 +530,25 @@
       box-shadow: 0 12px 30px rgba(255, 117, 140, 0.65);
     }
 
-    .btn-no {
-      background: rgba(255, 255, 255, 0.28);
-      border: 1.5px solid rgba(255, 255, 255, 0.5);
-      color: #ffffff;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-      transition: top 0.2s ease, left 0.2s ease, transform 0.15s ease;
-      white-space: nowrap;
-      z-index: 999;
-    }
-
+.btn-no {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  color: #ffffff;
+  font-weight: 600;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2),
+              inset 0 1px 1px rgba(255, 255, 255, 0.6),
+              inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, top 0.25s ease, left 0.25s ease;
+  white-space: nowrap;
+  z-index: 99999;
+}
     /* Celebration Screen */
     .celebration-view {
       display: none;
@@ -570,6 +578,10 @@
       .btn { padding: 12px 30px; font-size: 0.95rem; }
     }
   </style>
+
+
+
+  
 </head>
 <body>
 
@@ -583,7 +595,7 @@
   <div class="ambient-glow glow-1"></div>
   <div class="ambient-glow glow-2"></div>
 
-  <!-- Audio Element (Your URL + fallback to ensure 'A Thousand Years' never fails) -->
+  <!-- Audio Element -->
   <audio id="bg-music" loop preload="auto">
     <source src="https://mp3tourl.com/audio/1793466888916-ae80aea0-cada-4ed1-8fbe-69dd56add322.mp3" type="audio/mp3">
     <source src="https://ia801503.us.archive.org/15/items/a-thousand-years_202107/A%20Thousand%20Years.mp3" type="audio/mp3">
@@ -601,11 +613,11 @@
        ======================================================================== -->
   <div class="bubble-container">
     <div class="glass-bubble bubble-1"><p>Every moment with you is magic ✨</p></div>
-    <div class="glass-bubble bubble-2"><p>I have loved you for a thousand years 🎶</p></div>
-    <div class="glass-bubble bubble-3"><p>My heart chose you ❤️ #PaRosh</p></div>
+    <div class="glass-bubble bubble-2"><p>My favorite view in every lifetime. ✨</p></div>
+    <div class="glass-bubble bubble-3"><p>My heart chose you Paridhi ❤️ </p></div>
     <div class="glass-bubble bubble-4"><p>Home is wherever you are 🏡</p></div>
     <div class="glass-bubble bubble-5"><p>I'll love you for a thousand more 🌸</p></div>
-    <div class="glass-bubble bubble-6"><p>Roshan & Paridhi Forever ♾️</p></div>
+    <div class="glass-bubble bubble-6"><p>Paridhi & Roshan Forever ♾️</p></div>
   </div>
 
   <!-- ========================================================================
@@ -616,11 +628,11 @@
       
       <!-- STAGE 1: OUR MEMORIES (PHOTOS) -->
       <div class="stage-section active-stage" id="stage-1">
-        <span class="couple-tag">#PaRosh Diaries</span>
-        <h2 class="serif-title">Our Favorite Moments</h2>
+        <span class="couple-tag">#PaRosh</span>
+        <h2 class="serif-title">Moments</h2>
         
         <div class="photo-frame">
-          <img id="slideshow-img" src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=800&auto=format&fit=crop" alt="Our Memory">
+          <img id="slideshow-img" src="photos\WhatsApp Image 2026-11-02 at 4.06.06 PM.jpeg" alt="Our Memory">
         </div>
 
         <p class="photo-caption" id="slideshow-caption">Where our journey started... ✨ #PaRosh</p>
@@ -649,7 +661,6 @@
             <div class="city-badge badge-patna">
               <span class="city-person">Roshan 📍</span>
               <span class="city-name">Patna</span>
-              <span class="state-name">Bihar</span>
             </div>
 
             <!-- Connecting Thread & Pulse Heart -->
@@ -662,13 +673,12 @@
             <div class="city-badge badge-lucknow">
               <span class="city-person">Paridhi 📍</span>
               <span class="city-name">Lucknow</span>
-              <span class="state-name">Uttar Pradesh</span>
             </div>
 
             <!-- Combined Merged Union Badge -->
             <div class="mingled-union-badge" id="union-badge">
               <span style="font-size: 1.5rem; margin-bottom: 2px;">💞</span>
-              <span class="union-title">Roshan & Paridhi</span>
+              <span class="union-title">Paridhi & Roshan</span>
               <span class="union-subtitle">Two Cities • One Heart</span>
               <span class="union-tag">#PaRosh</span>
             </div>
@@ -691,7 +701,7 @@
 
       <!-- STAGE 3: THE PROPOSAL (FINAL QUESTION) -->
       <div class="stage-section" id="stage-3">
-        <span class="couple-tag">Roshan & Paridhi</span>
+        <span class="couple-tag">Paridhi & Roshan</span>
         <p class="body-desc">
           "Paridhi, I want to spend every sunrise, every quiet night, and every adventure of life right by your side."
         </p>
@@ -706,8 +716,8 @@
       <!-- SUCCESS / CELEBRATION VIEW -->
       <div class="celebration-view" id="celebration-content">
         <span class="couple-tag">#PaRosh Forever 💍</span>
-        <h2 class="serif-title">She Said Yes! ❤️</h2>
-        <p class="body-desc">Roshan & Paridhi together forever. Our beautiful journey has officially begun.</p>
+        <h2 class="serif-title">Look straight into the lens as if you're looking right into my eyes, and give me the answer my heart has been waiting for. ❤️</h2>
+        <p class="body-desc">Paridhi & Roshan together forever. Our beautiful journey has officially begun.</p>
       </div>
 
     </div>
@@ -750,17 +760,22 @@
          ---------------------------------------------------------------------- */
       const memories = [
         {
-          src: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=800&auto=format&fit=crop",
+          src: "photos/WhatsApp Image 2026-11-02 at 4.06.06 PM.jpeg",
           caption: "Where our journey started... ✨ #PaRosh"
         },
         {
-          src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=800&auto=format&fit=crop",
-          caption: "To all the late-night laughter & conversations 🌙"
+          src: "photos/WhatsApp Image 2026-11-02 at 4.06.06 PM (1).jpeg",
+          caption: "Grace in your smile, warmth in your eyes, and a lifetime of love in my heart. ❤️"
+        },
+           {
+          src: "photos/WhatsApp Image 2026-11-03 at 7.39.29 AM.jpeg",
+          caption: "Every prayer I ever made found its answer the day you walked into my world. 💫"
         },
         {
-          src: "https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=800&auto=format&fit=crop",
+          src: "photos/WhatsApp Image 2026-11-02 at 4.10.08 PM.jpeg",
           caption: "Every heartbeat beats for you, Paridhi ❤️"
         }
+       
       ];
 
       let currentPhotoIndex = 0;
@@ -779,7 +794,6 @@
         if (!bgMusic) return;
         bgMusic.volume = 0.7;
 
-        // Force browser cache refresh / load if halted
         if (bgMusic.readyState === 0) {
           bgMusic.load();
         }
@@ -855,7 +869,7 @@
       mingleBtn.addEventListener('click', () => {
         if (!isMingled) {
           connectionArea.classList.add('mingled');
-          distanceDesc.textContent = "Distance was just a reminder of how strong our bond is. Roshan & Paridhi are united forever ✨ #PaRosh";
+          distanceDesc.textContent = "Distance was just a reminder of how strong our bond is. Paridhi & Roshan are united forever ✨ #PaRosh";
           
           confetti({
             particleCount: 45,
@@ -881,25 +895,31 @@
       /* ----------------------------------------------------------------------
          Stage 3: Evasive "No" Button
          ---------------------------------------------------------------------- */
+     /* ----------------------------------------------------------------------
+          Stage 3: Evasive "No" Button
+          ---------------------------------------------------------------------- */
       let hasRepositioned = false;
 
       function evadeCursor(e) {
         if (e && e.cancelable) e.preventDefault();
 
+        // Move to <body> on first trigger to break out of glass-card stacking contexts
         if (!hasRepositioned) {
+          document.body.appendChild(noBtn);
           noBtn.style.position = 'fixed';
+          noBtn.style.margin = '0';
           hasRepositioned = true;
         }
 
-        const btnWidth = noBtn.offsetWidth;
-        const btnHeight = noBtn.offsetHeight;
+        const btnWidth = noBtn.offsetWidth || 110;
+        const btnHeight = noBtn.offsetHeight || 50;
         const safePadding = 24;
 
-        const maxX = window.innerWidth - btnWidth - safePadding;
-        const maxY = window.innerHeight - btnHeight - safePadding;
+        const maxX = Math.max(safePadding, window.innerWidth - btnWidth - safePadding);
+        const maxY = Math.max(safePadding, window.innerHeight - btnHeight - safePadding);
 
-        const randomX = Math.max(safePadding, Math.floor(Math.random() * maxX));
-        const randomY = Math.max(safePadding, Math.floor(Math.random() * maxY));
+        const randomX = Math.floor(Math.random() * (maxX - safePadding + 1)) + safePadding;
+        const randomY = Math.floor(Math.random() * (maxY - safePadding + 1)) + safePadding;
 
         noBtn.style.left = `${randomX}px`;
         noBtn.style.top = `${randomY}px`;
@@ -908,6 +928,7 @@
       noBtn.addEventListener('mouseenter', evadeCursor);
       noBtn.addEventListener('touchstart', evadeCursor, { passive: false });
       noBtn.addEventListener('pointerdown', evadeCursor);
+      noBtn.addEventListener('click', evadeCursor);
 
       /* ----------------------------------------------------------------------
          Stage 3: "Yes" Button Confetti Finale
